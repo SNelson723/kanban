@@ -26,4 +26,5 @@ export const boardSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
+export const { setName, setBoards } = boardSlice.actions;
 export default boardSlice.reducer

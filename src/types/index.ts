@@ -3,3 +3,7 @@ export interface Board {
   name: string;
   created: string;
 }
+
+export type ErrorJson = {
+  message: string;
+}

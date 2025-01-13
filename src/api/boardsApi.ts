@@ -14,7 +14,7 @@ export const getAllBoards = async (url: string) => {
   return json;
 };
 
-export const createBoard = async (url: string, board: Board) => {
+export const createBoard = async (url: string, board: Pick<Board, 'name'>) => {
   const json = await axios({
     method: 'POST',
     headers: {
