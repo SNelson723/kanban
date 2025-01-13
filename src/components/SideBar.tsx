@@ -1,6 +1,13 @@
 const SideBar = () => {
   return (
-    <div className="w-[300px]">Side Bar</div>
+    <div className="w-[300px]">
+      <div>
+        Sidebar
+      </div>
+      <div>
+        <input type="text" />
+      </div>
+    </div>
   );
 };
 
