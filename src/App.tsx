@@ -1,17 +1,18 @@
-
+import SideBar from "./components/SideBar";
+import TitleBar from "./components/Titlebar";
+import Content from "./components/Content";
 
 const App = () => {
 
   return (
     <div className="w-screen h-screen bg-slate-600 text-white">
-      <div className="border-b w-full pl-4 py-2">toolbar</div>
+      <TitleBar />
       <div className="flex">
-        <div className="w-[300px]">sidebar</div>
-        <div className="flex-1">content</div>
-        <div>Howdy</div>
+        <SideBar />
+        <Content />
       </div>
     </div>
   );
-}
+};
 
 export default App
