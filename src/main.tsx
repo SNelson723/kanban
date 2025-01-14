@@ -11,6 +11,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     {/* store */}
     <Provider store={store}>
+      {/* For Live notifications */}
       <ToastContainer theme="colored" pauseOnHover={false} />
       {/* router */}
       <BrowserRouter>
