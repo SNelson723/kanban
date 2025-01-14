@@ -28,7 +28,7 @@ const SideBar = () => {
           toast.warn(j.msg);
         }
       })
-      .catch((err: ErrorJson) => toast.error(err.message))
+      .catch((err: ErrorJson) => toast.error(err.message));
   };
 
   const uploadNewBoard = () => {
