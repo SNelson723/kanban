@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 import { store } from './store/index.ts';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import { ToastContainer } from 'react-toastify';
-console.log('howdy')
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
