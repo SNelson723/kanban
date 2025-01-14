@@ -14,3 +14,10 @@ export const getAllBoards = http.get('https://localhost:44323/api/boards/list', 
     ]
   });
 });
+
+export const createBoard = http.post('https://localhost:44323/api/boards/create', () => {
+  return HttpResponse.json({
+    error: 0,
+    success: true
+  })
+});

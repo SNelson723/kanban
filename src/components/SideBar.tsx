@@ -20,7 +20,6 @@ const SideBar = () => {
   const getData = () => {
     getAllBoards(context.url)
       .then(resp => {
-        console.log(resp.data);
         const j = resp.data;
 
         if (j.error == 0) {
@@ -89,6 +88,7 @@ const SideBar = () => {
       <div>Sidebar</div>
       <div query-id="create-form" className="px-4 py-4">
         <input
+        query-id="new-board-name"
         className="border-none rounded-lg py-1 px-2
           ring-0 outline-none focus:outline-purple-500
           transition-all duration-500 w-full text-black"
@@ -100,7 +100,9 @@ const SideBar = () => {
           bg-slate-400 text-black mt-2
           hover:bg-slate-500 transition-all duration-500 w-full
           cursor-pointer text-center font-medium"
-        onClick={handleClick}>
+        onClick={handleClick}
+        query-id="new-board-button"
+        >
           Submit
         </div>
       </div>

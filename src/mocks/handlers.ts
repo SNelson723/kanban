@@ -1,6 +1,7 @@
 import { http, HttpResponse } from 'msw';
-import { getAllBoards } from './sidebar';
+import { getAllBoards, createBoard } from './sidebar';
 
 export const handlers = [
-  getAllBoards
+  getAllBoards,
+  createBoard
 ];
