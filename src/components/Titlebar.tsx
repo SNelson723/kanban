@@ -1,6 +1,6 @@
 const TitleBar = () => {
   return (
-    <div className="border-b w-full pl-4 py-2">Title Bar</div>
+    <div data-testid="title-text" className="border-b w-full pl-4 py-2">Title bar</div>
   );
 };
 
