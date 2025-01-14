@@ -47,6 +47,7 @@ const SideBar = () => {
       .catch((err: ErrorJson) => toast.error(err.message));
   };
 
+  // Once a new board is submitted, upload the new one
   const handleClick = () => {
     if (boardState.name.length == 0) {
       toast.warn("Please enter a name");
@@ -57,6 +58,7 @@ const SideBar = () => {
     uploadNewBoard();
   };
 
+  // This is to start setting up the drag and drop
   const calculateDimensions = (): Pick<DOMRect, 'x' | 'y'| 'height' | 'width' | 'top' | 'left'> => {
     const div = document.querySelector('[query-id="create-form"]');
 
@@ -87,16 +89,16 @@ const SideBar = () => {
       <div query-id="create-form" className="px-4 py-4">
         <input
         className="border-none rounded-lg py-1 px-2
-        ring-0 outline-none focus:outline-purple-500
-        transition-all duration-500 w-full text-black"
+          ring-0 outline-none focus:outline-purple-500
+          transition-all duration-500 w-full text-black"
         type="text"
         value={boardState.name}
         onChange={(e) => dispatch(setName(e.target.value))}
         />
         <div className="rounded-lg shadow-md px-6 py-2
-        bg-slate-400 text-black mt-2
-        hover:bg-slate-500 transition-all duration-500 w-full
-        cursor-pointer text-center font-medium"
+          bg-slate-400 text-black mt-2
+          hover:bg-slate-500 transition-all duration-500 w-full
+          cursor-pointer text-center font-medium"
         onClick={handleClick}>
           Submit
         </div>
