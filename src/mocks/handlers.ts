@@ -1,10 +1,6 @@
 import { http, HttpResponse } from 'msw';
+import { getAllBoards } from './sidebar';
 
 export const handlers = [
-  http.get('https://localhost:44323/api/boards/list', () => {
-    return HttpResponse.json({
-      error: 0,
-      success: true
-    })
-  })
+  getAllBoards
 ];

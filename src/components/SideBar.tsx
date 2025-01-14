@@ -1,6 +1,6 @@
 import { useAppSelector } from "../hooks";
 import { setName, setBoards } from "../features/boardSlice";
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useDispatch } from "react-redux";
 import { createBoard, getAllBoards } from "../api/boardsApi";
 import { toast } from 'react-toastify';
@@ -11,8 +11,6 @@ const SideBar = () => {
   const boardState = useAppSelector((state) => state.boards);
   const dispatch = useDispatch();
 
-  const [error, setError] = useState<string>('');
-
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -22,8 +20,8 @@ const SideBar = () => {
   const getData = () => {
     getAllBoards(context.url)
       .then(resp => {
+        console.log(resp.data);
         const j = resp.data;
-        setError(j.error)
 
         if (j.error == 0) {
           dispatch(setBoards(j.boards));
@@ -107,7 +105,6 @@ const SideBar = () => {
         </div>
       </div>
 
-      <div data-testid="error-code">error: {error}</div>
       <div
         ref={ref}
         style={{height: `${getHeight()}px`}}
@@ -121,6 +118,7 @@ const SideBar = () => {
           <div>
             {boardState.boards.map((board, idx) => (
               <div
+              data-testid={`board-${board.id}`}
               key={`board-${idx}`}
               className="rounded-lg shadow-md px-2 py-2 boarder mb-2
               uppercase font-medium cursor-pointer
